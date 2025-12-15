@@ -1,0 +1,415 @@
+/* Variables CSS y Reset Básico */
+:root {
+    --primary-color: #008080; /* Teal/Verde azulado (Agua y Naturaleza) */
+    --secondary-color: #E3B448; /* Amarillo Mostaza (Sabor y Sol) */
+    --text-color: #333;
+    --light-bg: #f7f7f7;
+    --dark-bg: #2c3e50;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- HEADER y Navegación --- */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Burger Menu (Solo para móvil) */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- HERO (Sección Principal) --- */
+.hero {
+    background: url('hero-cascol.jpg') no-repeat center center/cover; /* Reemplaza con una imagen real */
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay oscuro */
+}
+
+.hero-content {
+    z-index: 10;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #f0c56b;
+}
+
+/* --- SECCIONES DE CONTENIDO --- */
+.feature-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.feature-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.alt-bg {
+    background-color: var(--light-bg);
+}
+
+/* Contenedor de Tarjetas (Naturales) */
+.cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Animación al pasar el mouse */
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Grid de Cultura */
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Gastronomía */
+.gastro-item {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-bottom: 1px dashed var(--primary-color);
+}
+.gastro-item:last-child {
+    border-bottom: none;
+}
+
+/* Planifica */
+#planifica ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 20px auto 40px;
+    text-align: left;
+}
+#planifica ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.secondary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.secondary:hover {
+    background-color: #006666;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+/* --- Media Queries (Responsiveness) --- */
+@media screen and (max-width: 768px) {
+    
+    .nav-links {
+        /* Estado inicial: oculto fuera de la pantalla */
+        position: absolute;
+        right: 0;
+        top: 8vh;
+        height: 92vh;
+        background-color: var(--dark-bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 50px;
+    }
+
+    .nav-links li {
+        opacity: 0; /* Ocultar elementos para animación */
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    /* Clase que se añade con JS para mostrar la navegación */
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    /* Animación de las líneas del burger */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    footer {
+        flex-direction: column;
+    }
+    .social-links {
+        margin-top: 10px;
+    }
+}
+
+/* Animación de fade-in para elementos al scroll (JS) */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* --- CAMBIOS EN LA SECCIÓN DE TARJETAS (Naturales) --- */
+
+.card {
+    /* Mantenemos el estilo anterior */
+    overflow: hidden; /* Importante para el contenedor de la imagen */
+}
+
+.card-img {
+    width: 100%;
+    height: 180px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    display: block;
+    margin-bottom: 15px;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-img {
+    transform: scale(1.05); /* Zoom ligero al pasar el mouse */
+}
+
+.educational-info {
+    background-color: #e0f2f1; /* Fondo ligero para información educativa */
+    border-left: 3px solid var(--primary-color);
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    text-align: left;
+    color: #444;
+}
+
+.map-link {
+    display: block;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.map-link:hover {
+    background-color: #f0c56b;
+}
+
+/* --- CAMBIOS EN LA SECCIÓN CULTURA --- */
+.culture-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* --- CAMBIOS EN LA SECCIÓN GASTRONOMÍA --- */
+.gastro-item {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+    padding: 30px 0;
+}
+
+.gastro-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Imágenes circulares para gastronomía */
+    flex-shrink: 0;
+    border: 3px solid var(--secondary-color);
+}
+
+.gastro-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.gastro-item p {
+    margin-bottom: 10px;
+}
+
+/* Descripción de Sección general */
+.section-description {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* --- RESPONSIVE GASTRONOMÍA (Móviles) --- */
+@media screen and (max-width: 600px) {
+    .gastro-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .gastro-img {
+        width: 120px;
+        height: 120px;
+    }
+}
